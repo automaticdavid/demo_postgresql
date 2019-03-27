@@ -2,6 +2,19 @@
 - name: Install and Configure PostgreSQL on Linux  hosts
   hosts: all
   tasks:
+
+    - name: Verify that the latest Red Hat Subscription Manager is present
+      yum:
+        name: subscription-manager
+        state: latest
+
+    - name: Register system into RHSM
+      redhat_subscription:
+        state: present
+        username: "{{ rhsm_username }}"
+        password: "{{ rhsm_password }}"
+        force_register: yes
+    
     - name: Including PostgreSQL role
       include_role:
         name: postgresql
