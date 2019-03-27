@@ -1,0 +1,13 @@
+---
+- name: Install and Configure PostgreSQL on Linux  hosts
+  hosts: all
+  tasks:
+    - name: Including PostgreSQL role
+      include_role:
+        name: postgresql
+      vars:
+        postgresql_databases:
+          - name: example_db
+        postgresql_users:
+          - name: example_user
+            password: supersecure
