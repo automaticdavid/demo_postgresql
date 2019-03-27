@@ -1,6 +1,7 @@
 ---
 - name: Install and Configure PostgreSQL on Linux  hosts
   hosts: all
+  become: yes
   tasks:
 
     - name: Verify that the latest Red Hat Subscription Manager is present
