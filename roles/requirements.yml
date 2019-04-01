@@ -1,3 +1,7 @@
 - src: geerlingguy.postgresql
   version: 1.4.5
   name: postgresql
+
+- src: https://github.com/automaticdavid/hc_vault_machine_credential.git
+  version: master
+  name: hc_vault_machine_credential

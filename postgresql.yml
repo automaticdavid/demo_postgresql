@@ -4,6 +4,13 @@
   become: yes
   tasks:
 
+    - name: Get credentials from Vault
+      include_role: 
+        name: hc_vault_machine_credential
+
+    - name: 
+        meta: end_play
+
     - name: Verify that the latest Red Hat Subscription Manager is present
       yum:
         name: subscription-manager
