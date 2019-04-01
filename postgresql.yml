@@ -8,8 +8,8 @@
       include_role: 
         name: hc_vault_machine_credential
 
-    - name: 
-        meta: end_play
+    - name: Stop for testing
+      meta: end_play
 
     - name: Verify that the latest Red Hat Subscription Manager is present
       yum:
